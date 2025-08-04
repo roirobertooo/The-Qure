@@ -1,0 +1,24 @@
+# Alzheimer's Pipeline Configuration
+
+# Classification Settings
+CLASSIFICATION:
+  epochs: 50
+  batch_size: 32
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  
+# Segmentation Settings  
+SEGMENTATION:
+  cam_threshold_percentile: 75
+  epochs: 3
+  batch_size: 16
+  learning_rate: 0.001
+  target_classes: 
+    - "Very Mild Impairment"
+    - "Mild Impairment"
+    
+# Data Settings
+DATA:
+  train_dir: "data/train"
+  test_dir: "data/test"
+  input_size: 224
