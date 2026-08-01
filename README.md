@@ -1,83 +1,83 @@
-# Qu-Alz 🧠⚛️
+# Qu-Alz
 
-**Quantum-Enhanced Alzheimer's Prediction & Early Risk Assessment**
+An experimental research system combining brain MRI processing, stage classification, and quantum-derived entropy features.
 
-[![Language](https://img.shields.io/github/languages/top/roivroberto/Qu-Alz)](https://github.com/roivroberto/Qu-Alz)
-[![Repo size](https://img.shields.io/github/repo-size/roivroberto/Qu-Alz)](https://github.com/roivroberto/Qu-Alz)
-[![Last commit](https://img.shields.io/github/last-commit/roivroberto/Qu-Alz)](https://github.com/roivroberto/Qu-Alz)
-[![Stars](https://img.shields.io/github/stars/roivroberto/Qu-Alz?style=social)](https://github.com/roivroberto/Qu-Alz)
-[![Forks](https://img.shields.io/github/forks/roivroberto/Qu-Alz?style=social)](https://github.com/roivroberto/Qu-Alz)
-[![License](https://img.shields.io/github/license/roivroberto/Qu-Alz)](https://github.com/roivroberto/Qu-Alz)
+![Entanglement Entropy Score results across the four prototype classes](docs/results/quantum/quantum_ees_visualization.png)
 
----
+Qu-Alz began with a research question: could MRI-based stage classification be paired with a quantum-derived signal to support research into earlier Alzheimer's risk assessment?
 
-## 🚀 Demo
-[![Watch the Demo](https://img.shields.io/badge/Watch%20Demo-Google%20Drive-red?style=for-the-badge&logo=googledrive)](https://drive.google.com/file/d/1VnYx8GrsQ_RTE0VKjCUbmoR_bjvI232j/view?usp=sharing)
+The resulting prototype connects medical-image processing, machine learning, quantum computation, and a web interface for reviewing the outputs together. It was first developed for SEA Quantathon 2025, where it placed first runner-up. The team later developed the work into a conference paper accepted for presentation at ASEAN IVO Forum 2025.
 
-*Click the badge above to see the project in action.*
+## Research workflow
 
----
+```text
+Brain MRI
+    -> preprocessing and region segmentation
+    -> four-stage impairment classification
+    -> MRI feature encoding
+    -> reduced density matrices
+    -> von Neumann entropy
+    -> Entanglement Entropy Score
+    -> combined research view
+```
 
-## 📖 About
-**Qu-Alz** is a cutting-edge healthcare solution that leverages **Quantum Machine Learning (QML)** and deep learning to provide early detection and risk assessment for Alzheimer's disease.
+The system includes:
 
-By introducing the **Quantum Entanglement Entropy Score (EES)**—a fundamentally quantum-only biomarker—this project identifies subtle patterns in MRI data that classical machine learning kernels cannot compute. This innovation aims to push the boundaries of early neurodegenerative disease diagnosis using the power of quantum information theory.
+- PyTorch-based MRI preprocessing and segmentation;
+- classification across no, very mild, mild, and moderate impairment classes;
+- a quantum path using a `ZZFeatureMap`, density matrices, and von Neumann entropy;
+- an Entanglement Entropy Score considered alongside the image-model outputs;
+- a Next.js interface for uploading an MRI image and reviewing the generated results;
+- notebooks, scripts, trained prototype artifacts, tests, and generated result plots.
 
----
+## Presented results
 
-## 🛠️ Tech Stack
-### **Frontend (Interface)**
-- **Framework:** Next.js 15, React 19, TypeScript
-- **Styling:** Tailwind CSS, Radix UI (shadcn/ui), Lucide Icons
-- **Visualizations:** Recharts (Interactive heatmap & entanglement meters)
+The competition presentation framed the system as a combined pipeline rather than a standalone model. The repository retains the outputs used to discuss that pipeline:
 
-### **AI & Quantum (Backend/Models)**
-- **Deep Learning:** PyTorch (CNN for classification, U-Net for MRI segmentation)
-- **Quantum Computing:** Qiskit (Quantum circuits, ZZFeatureMap, density matrices)
-- **Scientific Computing:** NumPy, SciPy, Scikit-Learn
-- **Visualization:** Matplotlib, Seaborn
+- [class-level EES comparison](docs/results/quantum/quantum_ees_class_results.png);
+- [EES visualization](docs/results/quantum/quantum_ees_visualization.png);
+- [stage-classification confusion matrix](docs/results/segmentation/confusion_matrix.png);
+- [sample segmentation and classification outputs](docs/results/segmentation/).
 
----
+These are experimental prototype results. The project did not conduct clinical evaluation or establish diagnostic performance.
 
-## ✨ Features
-- 🧬 **Quantum-Only Biomarker**: Computes Entanglement Entropy Score (EES) using quantum superposition and density matrices.
-- 🖼️ **MRI Segmentation**: Automated U-Net based segmentation of brain regions from MRI scans.
-- 📊 **Disease Classification**: Multi-stage Alzheimer's classification (No Impairment, Very Mild, Mild, Moderate).
-- 📈 **Risk Pipeline**: Comprehensive pipeline integrating classical features with quantum biomarkers for risk assessment.
-- 🖥️ **Interactive Dashboard**: A professional clinical interface for uploading MRIs and visualizing diagnostic results.
+## Run locally
 
----
+### Research pipeline
 
-## 📂 Project Structure
-- `interface/`: Next.js web application for clinical triage.
-- `classifier/`: CNN and QCNN (Quantum CNN) models for Alzheimer's stage prediction.
-- `segmentation/`: U-Net models and scripts for automated brain MRI segmentation.
-- `quantum-risk/`: Quantum EES (Entanglement Entropy Score) pipeline and risk assessment.
-- `docs/`: Project documentation, presentation materials, and diagnostic results.
+```bash
+cd quantum-risk
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python test_quantum_ees.py
+```
 
----
+Additional usage notes are available in [`quantum-risk/PIPELINE_USAGE.md`](quantum-risk/PIPELINE_USAGE.md).
 
-## 🚦 Getting Started
+### Interface
 
-### **1. Web Interface**
 ```bash
 cd interface
 npm install --legacy-peer-deps
 npm run dev
 ```
 
-### **2. Quantum & AI Models**
-```bash
-cd quantum-risk
-pip install -r requirements.txt
-python test_quantum_ees.py
-```
+The interface is a review surface for the prototype outputs; it is not a clinical application.
 
----
+## Recognition and presentation
 
-## 📜 License
-This project is licensed under the MIT License.
+- First runner-up, SEA Quantathon 2025
+- Conference paper accepted for presentation at ASEAN IVO Forum 2025: *Qu-Alz: Quantum-Enhanced Early Prediction of Alzheimer's in Southeast Asia*
+- [Project demonstration](https://drive.google.com/file/d/1VnYx8GrsQ_RTE0VKjCUbmoR_bjvI232j/view?usp=sharing)
+- [CERN Open Quantum Institute event report](https://open-quantum-institute.cern/asean-quantum-summit-2025-building-regional-collaboration-for-the-future-of-quantum-technology/)
+- [Official ASEAN IVO Forum program](https://www.nict.go.jp/en/asean_ivo/2025B_Forum_Program.html?channel=main)
+- [Presentation archive](https://naivo.org/index.php/2025forum/presentations/all)
 
----
+## Team
 
-*Originally developed for the **SEA Quantathon 2025** (Healthcare & Medicine Track) by Team **The Qure**.*
+Qu-Alz was developed by Roi Victor Roberto, Sayed Tahlil Hossain, Dimas Sakti Widyatmaja, and Mutawally Nawwar.
+
+## License
+
+Licensed under the [MIT License](LICENSE).
